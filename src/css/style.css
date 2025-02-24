@@ -1,0 +1,112 @@
+
+  
+.header {
+    overflow: hidden;
+    margin: auto;
+    width: 90%;
+    padding: 15px;
+    font-size: 25px;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+li {
+    display: inline-block;
+    margin: 15px auto;
+}
+
+
+nav li a:hover {
+
+    color: #daa520;
+}
+
+
+
+.fundo-video {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fundo-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Adicione isso para garantir que o vídeo mantenha a proporção original */
+.fundo-video::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; /* Ajuste isso para a proporção do seu vídeo (altura / largura * 100%) */
+}
+
+/* Restante do seu código... */
+
+
+.fundo-video::after {
+    content: "";
+    height: 100%;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+#burguer{display: none;
+}
+
+
+.logo {
+
+    margin-top: 150px;
+    text-align: center;
+}
+
+#regalipng {
+    width: 50%;
+}
+
+a {
+    display: block;
+    position: relative;
+    color: #fff;
+    font-size: 15px;
+    padding: 8px 10px;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #daa520;
+    transition: width .5s;
+}
+
+a:hover:before {
+    width: 100%;
+}
+
+
+
+

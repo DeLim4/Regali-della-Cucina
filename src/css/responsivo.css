@@ -1,0 +1,71 @@
+@media screen and (max-width:670px) {
+
+
+    .fundo-video {
+        /* display: none; */
+
+
+        opacity: 0.5;
+    }
+
+    body {
+        background-color: rgb(61, 15, 15);
+    }
+
+    .header {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: aliceblue;
+        width: 100%;
+
+    }
+
+    a {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+        margin: 10px;
+
+    }
+
+    #burguer {
+        display: flex;
+
+        cursor: pointer;
+    }
+
+
+
+    nav {
+        width: 10%;
+        height: 100vh;
+        display: none;
+    }
+}
+
+/*@media screen and (max-width:670px) {
+
+.header {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: aliceblue;
+        width: 100%;
+a {
+        font-size: 20px;
+        font-weight: bold;
+        color: black;
+        margin: 10px;
+
+    }
+#burguer{
+    display: flex;
+ 
+    cursor: pointer;}
+
+
+
+nav{width: 10%;
+    height: 100vh;
+    display: none;
+    } }
+    }*/

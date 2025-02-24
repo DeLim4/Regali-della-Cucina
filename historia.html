@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa História | Regali</title>
+    <link rel="icon" href="./src/Imagens/LogoMarrom.jpg (1).png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Fraunces:ital,wght@1,400;1,500;1,600&family=Hanken+Grotesk:ital,wght@0,100;0,200;1,100&family=Josefin+Sans:ital,wght@0,100;1,100;1,300&family=Lato:wght@300;400;700&family=Montserrat:ital,wght@0,100;1,100&family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@100;300;500&family=Russo+One&family=Water+Brush&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(./src/Imagens/background-menu.jpg);
+            background-position: center;
+
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            margin: 10px auto;
+            width: 80%;
+            justify-content: space-between;
+            height: 130px;
+
+        }
+
+        img {
+            width: 140px;
+
+        }
+
+        .setas {
+            width: 50px;
+            border: 1px solid black;
+            border-radius: 50%;
+            margin-top: 35px
+        }
+
+        .setas:hover {
+            padding: 2px;
+        }
+        .header {
+    overflow: hidden;
+    margin: auto;
+    width: 90%;
+    padding: 15px;
+    font-size: 25px;
+}
+#burguer{display: none;
+}
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+li {
+    display: inline-block;
+    margin: 15px auto;
+}
+
+
+nav li a:hover {
+
+    color: #daa520;
+}
+
+.logo {
+
+    margin-top: 150px;
+    text-align: center;
+}
+
+#regalipng {
+    width: 50%;
+}
+
+a {
+    display: block;
+    position: relative;
+    color: #000000;
+    font-size: 15px;
+    padding: 8px 10px;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #daa520;
+    transition: width .5s;
+}
+
+a:hover:before {
+    width: 100%;
+}
+
+        .content {
+            display: flex;
+            margin: 0 auto;
+
+        }
+
+        .galery1 {
+
+            width: 31vw;
+
+            height: 50vw;
+        }
+
+
+        .history {
+            text-align: center;
+
+            margin: 10% auto;
+            width: 34vw;
+            margin-right: 10px;
+        }
+
+
+        .galery2 {
+
+            width: 32vw;
+
+            height: 50vw;
+
+        }
+
+        .quadros {
+
+            height: 50%;
+
+            box-shadow: 20px 20px 57px #808080,
+                -20px -20px 57px #ffffff;
+        }
+
+        #ft1 {
+            background-image: url(./src/Imagens/prato1.jpg);
+            border-radius: 0px 50px 50px 0px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: 30px;
+            /* border-radius: 50px;
+            box-shadow:  20px 20px 57px #808080,
+             -20px -20px 57px #ffffff; */
+        }
+
+        #ft2 {
+            background-image: url(./src/Imagens/prato.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 0px 50px 50px 0px;
+        }
+
+        #ft3 {
+            background-image: url(./src/Imagens/prato2.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-bottom: 30px;
+            border-radius: 50px 0px 0px 50px;
+        }
+
+        #ft4 {
+            background-image: url(./src/Imagens/prato3.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 50px 0px 0px 50px;
+        }
+
+        h1 {
+            font-family: 'Russo One', sans-serif;
+            margin: 0 auto;
+            max-width: 70%;
+            color: #413b33;
+            font-size: 60px;
+        }
+
+        h4 {
+            color: rgb(63, 47, 47);
+        }
+
+        p {
+            margin-top: 30px;
+        }
+
+       
+
+        @media screen and (max-width:670px) {
+            
+
+
+.fundo-video {
+    /* display: none; */
+
+
+    opacity: 0.5;
+}
+
+body {
+    background-color: rgb(61, 15, 15);
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+    width: 100%;
+
+}
+
+a {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin: 10px;
+
+}
+
+#burguer {
+    display: flex;
+
+    cursor: pointer;
+}
+
+
+
+nav {
+    width: 10%;
+    height: 100vh;
+    display: none;
+}
+
+            .container {
+
+                width: 95%;
+                justify-content: space-between;
+                height: 100px;
+
+            }
+
+            img {
+                width: 100px;
+
+            }
+
+            .setas {
+                width: 40px;
+                border: 1px solid black;
+                border-radius: 50%;
+                margin-top: 35px
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+
+            }
+
+            .galery1 {
+                margin-top: 20px;
+                width: 100%;
+                height: 70vw;
+            }
+
+
+            .history {
+
+                text-align: center;
+                margin: 25px auto;
+                width: 90%;
+
+            }
+            p{margin-bottom: 15px;}
+            
+
+
+            .galery2 {
+
+                margin-top: 10px;
+                width: 100%;
+                height: 70vw;
+            }
+
+            #ft1 {
+                display: none;
+            }
+
+            #ft2 {
+
+                box-shadow: 18px 21px 11px -1px rgba(0, 0, 0, 0.75);
+                -moz-box-shadow: 18px 21px 11px -1px rgba(0, 0, 0, 0.75);
+                box-shadow: 18px 21px 11px -1px rgba(0, 0, 0, 0.75);
+                border-radius: 0 0 75px;
+                height: 100%;
+                position: relative;
+            }
+        
+
+        #ft3 {
+            display: none;
+        }
+
+        #ft4 {
+            height: 100%;
+            box-shadow: -12px -12px 11px -1px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: -12px -12px 11px -1px rgba(0, 0, 0, 0.75);
+            box-shadow: -12px -12px 11px -1px rgba(0, 0, 0, 0.75);
+            position: relative;
+            border-radius: 75px 0;
+        }
+    }
+    </style>
+
+</head>
+
+
+
+<body>
+    <div class="header">
+        <span class="material-symbols-outlined" id="burguer" onclick="clickMenu()">
+            Menu
+            </span>
+        <nav id="menu">
+           
+            <ul class="menu">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./historia.html">Historia</a></li>
+                <li><a href="./unidade.html">Unidade</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./delivery.html">Delivery</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+            </ul>
+
+        
+        </nav>
+
+        
+    
+
+    </div>
+    <div class="content">
+        <div class="galery1">
+            <div id="ft1" class="quadros"></div>
+            <div id="ft2" class="quadros"></div>
+        </div>
+
+        <div class="history">
+            <h1>regali della cucina</h1>
+            <h4>Restaurante Italiano</h4>
+         
+            <p>Criamos o Regali Della Cucina em novembro de 2022, com intuito de trazer um pedacinho da Itália para o coração do setor Noroeste de Brasília.
+                <br> Nosso restaurante é um convite para uma experiência gastronômica completa, com variedade de pratos que agradam todos os paladares. Idealizamos uma culinária de qualidade e saborosa com preços acessíveis. Buon appetito!</p>
+        </div>
+        <div class="galery2">
+            <div id="ft3" class="quadros"></div>
+            <div id="ft4" class="quadros"></div>
+        </div>
+    </div>
+    <script>
+        function clickMenu(){
+    if (menu.style.display =='block'){menu.style.display='none'}
+    else{menu.style.display='block'}
+}
+
+    </script>
+</body>
+
+</html>

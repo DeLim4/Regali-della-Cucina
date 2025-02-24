@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Regali</title>
+    <link rel="icon" href="./src/Imagens/LogoMarrom.jpg (1).png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Fraunces:ital,wght@1,400;1,500;1,600&family=Hanken+Grotesk:ital,wght@0,100;0,200;1,100&family=Josefin+Sans:ital,wght@0,100;1,100;1,300&family=Lato:wght@300;400;700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;1,100&family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@100;300;500&family=Russo+One&family=Water+Brush&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alata&family=Fraunces:ital,wght@1,400;1,500;1,600&family=Hanken+Grotesk:ital,wght@0,100;0,200;1,100&family=Josefin+Sans:ital,wght@0,100;1,100;1,300&family=Lato:wght@300;400;700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;1,100&family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@100;300;500&family=Russo+One&family=Water+Brush&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: bebas neue;
+            src: url(./src/Fonts/BebasNeue-Regular.ttf);
+        }
+
+        body {
+            font-family: bebas neue;
+            background-image: url(./src/Imagens/background-menu.jpg);
+            background-position: center;
+            background-size: cover;
+        }
+
+        .header {
+            overflow: hidden;
+            margin: auto;
+            width: 90%;
+            padding: 15px;
+            font-size: 25px;
+        }
+
+        #burguer {
+            display: none;
+        }
+
+        .header .menu {
+            display: flex;
+            list-style: none;
+            margin: 0 auto;
+            padding: 30px;
+            flex-wrap: wrap;
+        }
+
+        li {
+            display: inline-block;
+            margin: 15px auto;
+        }
+
+        .header nav li a:hover {
+            color: #daa520;
+        }
+
+        .logo {
+            margin-top: 150px;
+            text-align: center;
+        }
+
+        a {
+            display: block;
+            position: relative;
+            color: #000000;
+            font-size: 15px;
+            padding: 8px 10px;
+            margin: 0 5px;
+            text-decoration: none;
+        }
+
+        .header a:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            background-color: #daa520;
+            transition: width .5s;
+        }
+
+        a:hover:before {
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            margin: 10px auto;
+            width: 80%;
+            justify-content: space-between;
+            height: 130px;
+        }
+
+        img {
+            width: 140px;
+        }
+
+        .setas {
+            width: 50px;
+            border: 1px solid black;
+            border-radius: 50%;
+            margin-top: 35px;
+        }
+
+        .setas:hover {
+            padding: 2px;
+        }
+
+        .menu {
+            margin-top: 70px;
+            text-align: center;
+            width: 90%;
+        }
+
+        h1 {
+            font-family: bebas neue;
+            margin-top: 70px;
+            width: 90%;
+            margin-left: 10%;
+        }
+
+        hr {
+            margin-bottom: 35px;
+            width: 90%;
+            margin-left: 10%;
+        }
+
+        .prato {
+            display: flex;
+            justify-content: space-between;
+            width: 90%;
+            height: 200px;
+            box-shadow: inset 27px 27px 54px #f2f2f2,
+                inset -27px -27px 54px #ffffff;
+            border-radius: 15px;
+            margin-left: auto;
+            margin-bottom: 25px;
+        }
+
+        .prato img {
+            margin-right: 15px;
+            
+            width: 130px;
+            border-radius: 15px;
+        }
+
+        .description {
+            margin-top: 75px;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        h4 {
+            margin-top: 80px;
+            margin-left: auto;
+            margin-right: 25px;
+        }
+
+        h5 {
+            margin-left: 10%;
+            color: gray;
+            margin-top: 15px;
+        }
+
+        .icon {
+            margin-top: 15px;
+            width: 170px;
+            margin-left: 10%;
+        }
+
+        .sugestion img {
+            margin-left: 10%;
+            margin-bottom: 25px;
+            width: 70%;
+            border-radius: 25px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+       
+
+        .pratoExecutivo {
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(255, 255, 255);
+            width: 60%;
+            box-shadow: inset 27px 27px 54px #ffffff,
+                inset -27px -27px 54px #ffffff;
+            border-radius: 15px;
+            margin-left: 25%;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        /* Restante do seu código ... */
+
+
+        
+        /* teste */
+
+        label input[type="checkbox"] {
+            display: none;
+
+        }
+
+        label h1 {
+            cursor: pointer;
+
+        }
+
+        #col3Content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+
+        .cartadeivino {
+            background-image: url(./src/Imagens/fundoVinhos.jpg);
+            background-repeat: repeat-y;
+            background-size: contain;
+            border-radius: 20px;
+
+            border: 1px solid #8d7a10;
+            box-shadow: 20px 20px 59px #c9c9c9,
+                -20px -20px 59px #ffffff;
+            width: 50%;
+            margin: 50px 30%;
+            padding: 20px;
+
+
+        }
+
+        .goldborder {
+            border: 1px solid #8d7a10;
+            border-radius: 20px;
+
+            margin: 10px;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width:670px) {
+
+            .container {
+
+                width: 95%;
+                justify-content: space-between;
+                height: 100px;
+
+            }
+
+            .prato img {
+
+
+                max-width: 170px;
+            }
+
+            .header {
+                display: flex;
+                flex-wrap: wrap;
+                background-color: aliceblue;
+                width: 100%;
+
+            }
+
+            a {
+                font-size: 20px;
+                font-weight: bold;
+                color: black;
+                margin: 10px;
+
+            }
+
+            #burguer {
+                display: flex;
+
+                cursor: pointer;
+            }
+
+
+
+            nav {
+                width: 10%;
+                height: 100vh;
+                display: none;
+            }
+
+            img {
+                width: 100px;
+
+            }
+
+            .setas {
+                width: 40px;
+                border: 1px solid black;
+                border-radius: 50%;
+                margin-top: 35px
+            }
+
+
+            .sugestion img {
+                margin: 0 25px;
+                width: 100%;
+            }
+
+
+
+
+
+            .pratoExecutivo {
+                width: 90%;
+                margin: 0 10%;
+                padding: 0;
+            }
+
+            .executivo {
+                font-size: 16px;
+                margin: 5px 10%;
+                width: 90%;
+            }
+
+            .proteina {
+                position: relative;
+                right: 35px;
+            }
+
+            h3 {
+                margin: 0 auto;
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+
+            .cartadeivino {
+                width: 90%;
+                font-size: 25px;
+                margin: 0 10%;
+                text-align: center;
+            }
+
+
+        }
+
+        .botoes-navegacao {
+            text-align: center;
+            
+            background-color: #f1f1f1;
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        .botoes-navegacao a {
+            width: 45px;
+            height: 60px;
+            display: inline-block;
+            max-width: 120px;
+            margin: 0 6px;
+            padding: 6px 4%;
+            border: 1px solid #000;
+            color: #000000;
+            text-decoration: none;
+            border-radius: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .botoes-navegacao a:hover {
+            background-color: #000000;
+            color: #fff;
+        }
+
+        .botoes-navegacao.sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        .botoes-navegacao {
+            background-color: #f1f1f1;
+            padding: 10px;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        .botoes-navegacao a {
+            margin-right: 10px;
+            text-decoration: none;
+            color: #333;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+   
+    </style>
+</head>
+
+
+<body>
+    <div class="header">
+        <span class="material-symbols-outlined" id="burguer" onclick="clickMenu()">
+            Menu
+        </span>
+        <nav id="menu">
+
+            <ul class="menu">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./historia.html">Historia</a></li>
+                <li><a href="./unidade.html">Unidade</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./delivery.html">Delivery</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+            </ul>
+
+
+        </nav>
+
+
+
+
+    </div>
+    <div class="carrossel">
+        <!-- Conteúdo do carrossel (imagens, texto, etc.) -->
+
+        <!-- Botões de navegação -->
+        <div class="botoes-navegacao">
+            <a href="#menu">Menu Executivo</a>
+            <a href="#atipasti">Atipasti & Insalata</a>
+            <a href="#pasta">pasta & risotos</a>
+            <a href="#carne">Carne & PESCE</a>
+            <a href="#bambino">Bambino</a>
+            <a href="#dolce">Dolce</a>
+            <a href="#bibite">la bibite</a>
+            <a href="#carta">carta dei vino</a>
+            <a href="#nostro">il nostro bar</a>
+        </div>
+    </div>
+    <div class="menu">
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label id="menu">
+
+                <h1>• MENU EXECUTIVO •</h1>
+                <input type="checkbox" />
+                <div class="menu-section" id="col3Content">
+                    <hr>
+                    <div class="sugestion">
+                        <img src="./src/Imagens/executivo.jpg" alt="">
+                    </div>
+
+
+
+                </div>
+            </label>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label id="atipasti">
+                <h1>• ATIPASTI & INSALATA •</h1>
+                <input type="checkbox" />
+                <div id="col3Content" class="menu-section">
+                    <img class="icon" src="./src/Imagens/atipasti.png" alt="">
+                    <hr>
+                    <div class="prato">
+                        <img src="./src/Imagens/bruschettaregali.jpg" alt="">
+                        <div class="description">
+                            <h3>BRUSCHETTA REGALI</h3>
+                            <p>Misto de três sabores, pecorino, de parma e pomodoro.</p>
+                        </div>
+                        <h4>49</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>BRUSCHETTA DI PECORINO</h3>
+
+                            <p>Tomates temperados e queijo Pecorino com mel.</p>
+                        </div>
+                        <h4>39</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>BRUCHETTA DI PARMA</h3>
+                            <p>Presunto crú, figos, queijo Pecorino e mel.</p>
+                        </div>
+                        <h4>49</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/aranchinisicilian.jpg" alt="">
+                        <div class="description">
+                            <h3>ARANCINI SICILIANI</h3>
+                            <p>Bolinho de risoto com Pomodoro e Mussarela.</p>
+                        </div>
+                        <h4>39</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3> POLENTA DELLA NONNA</h3>
+                            <p>Polenta frita, crocante por fora e macia por dentro, servida com dois molhos, pomodoro e
+                                gorgonzola.
+                            </p>
+                        </div>
+                        <h4>31</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>PASTA FRIT DI BRIE</h3>
+                            <p>Mini pasteis de queijo brie com mel trufado (8 und.).</p>
+                        </div>
+                        <h4>39</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/burratacompresunto.jpg" alt="">
+                        <div class="description">
+                            <h3>BURRATA DI PARMA</h3>
+                            <p>Burrata com rúcula, tomate cereja, presunto crú e pesto.</p>
+                        </div>
+                        <h4>58</h4>
+                    </div>
+
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>BURRATA QUENTE</h3>
+                            <p>Burrata quente com tomate confit e pesto.</p>
+                        </div>
+                        <h4>58</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>CALAMARI FRITTI</h3>
+                            <p>Lulas a dorê acompanhadas com molho pizaiolo.</p>
+                        </div>
+                        <h4>55</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>FILETTO APERITIVO</h3>
+                            <p>Com molho gorgonzola ou mostarda e torradinhas.</p>
+                        </div>
+                        <h4>65</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>INSALATA DELLA CASA</h3>
+                            <p>Mix de folhas verdes com stracciatella crú, figos, tomates cereja, nozes e redução de
+                                vinagre de
+                                framboeza com mel.</p>
+                        </div>
+                        <h4>66</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/saladacomsalmao.jpg" alt="">
+                        <div class="description">
+                            <h3>INSALATA CON SALMONE</h3>
+                            <p>Mix de folhas verdes com cubinhos de salmão marinado em molho citrico, tomate cereja e
+                                torradinhas.
+                            </p>
+                        </div>
+                        <h4>67</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/tagliadetanzo.jpg" alt="">
+                        <div class="description">
+                            <h3>TAGLIATA DI TANZO</h3>
+                            <p>Fatias de filé mignion selados mal passado, rúcul, tomates cereja, mmolho de mostarda e
+                                queijo
+                                pecorino.</p>
+                        </div>
+                        <h4>74</h4>
+                    </div>
+                </div>
+            </label>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label id="pasta">
+                <h1>•PASTA & RISOTOS•</h1>
+
+
+                <input type="checkbox" />
+
+                <div id="col3Content" class="menu-section">
+                    <h5>Temos massa sem glúten e integral - 7 </h5>
+                    <img class="icon" src="./src/Imagens/massa.png" alt="">
+                    <hr>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>PARPADELLE AL BACCALA</h3>
+                            <p>Parpadelle com bacalhauy, azeitonas pretas, molho de tomate e azeite extra virgem.</p>
+                        </div>
+                        <h4>73</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/carbonara.jpg" alt="">
+                        <div class="description">
+                            <h3>SPAGHETII CARBONARA</h3>
+                            <p>Molho a base de gemas de ovos, panceta, queijo parmesão e Pecorino.</p>
+                        </div>
+                        <h4>64</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>PENNE ALLA NORMA</h3>
+                            <p>Berinjela, molho mpomodoro e ricota defumada.</p>
+                        </div>
+                        <h4>64</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>FETTUCCINE NERE FRUTTI DI MARE</h3>
+                            <p>Massa feita na casa, camarões, lulas e mexilhões salteados no azeite com tomate e ervas.
+                            </p>
+                        </div>
+                        <h4>93</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>RAVIOLI DI MOZZARELLA</h3>
+                            <p>De mussarela de búfala com molho de tomates fresco e manjericão. </p>
+                        </div>
+                        <h4>68</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>TORTELLI VERDI DI RICOTTA</h3>
+                            <p>Massa feita na casa, recheada com ricota com leve toque de limão siciliano e molho
+                                pomodoro.</p>
+                        </div>
+                        <h4>68</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>GNOCCHI CON GAMBERI E ZUCCHINE</h3>
+                            <p>Nhoque de batatas com camarões, abobrinha, fonduta de parmesão e pesto.</p>
+                        </div>
+                        <h4>93</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>GNOCCHI AL FORMAGGI</h3>
+                            <p>Nhoque com molho de três queijos gratinado com parmesão.</p>
+                        </div>
+                        <h4>64</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>GNOCCHI AL POMODORO E STRACCIATELLA</h3>
+                            <p>Nhoque de batatas com molho de tomate fresco, manjericão e stracciatella de búfala.</p>
+                        </div>
+                        <h4>66</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>LASANGNA AL FUNGUI TARTUFATI</h3>
+                            <p>Massa fresca feita na casa, com camadas de ragu de carne e molho de cogumelos com azeite
+                                de trufas.
+                            </p>
+                        </div>
+                        <h4>72</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>LASANGNA DELLA CASA</h3>
+                            <p>assa fresca feita na casa, com camadas de ragu de carne, com molho pomodoro e fonduta de
+                                parmesão.
+                            </p>
+                        </div>
+                        <h4>72</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/risotodeCamaroes.jpg" alt="">
+                        <div class="description">
+
+                            <h3>RISOTTO CON GAMBERI E POMODORO</h3>
+                            <p>Risoto de camarões e pomodoro, finalizados com tomates cereja e mussarela de búfala.</p>
+                        </div>
+                        <h4>91</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>RISOTTO FUNGHI E FILETTO</h3>
+                            <p>Risoto de cogumelos frescos e tirinhas de filet mignion grelhados.</p>
+                        </div>
+                        <h4>82</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>RISOTTO DI ASPARGOS E PROSCIUTTO</h3>
+                            <p>Risoto de aspargos frescos, presunto crú e queijo brie.</p>
+                        </div>
+                        <h4>86</h4>
+                    </div>
+                </div>
+            </label>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label id="carne">
+                <h1>• CARNE & PESCE •</h1>
+                <input type="checkbox" />
+                <div id="col3Content" class="menu-section">
+                    <img class="icon" src="./src/Imagens/carne.png" alt="">
+                    <hr>
+
+
+                    <div class="prato">
+                        <img src="./src/Imagens/filetcomfughi.jpg" alt="">
+                        <div class="description">
+                            <h3>FILETTO AL FUNGHI SALTATI</h3>
+                            <p>Filet Mignion com funghi salteados na manteiga e fettuccine com molho Alfredo.</p>
+                        </div>
+                        <h4>82</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>SALTIMBOCCA ALLA ROMANA</h3>
+                            <p>Filet Mignion com presunto crú e sálvia, risoto de parmesão.</p>
+                        </div>
+                        <h4>79</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/popetonediNapoli.jpg" alt="">
+                        <div class="description">
+                            <h3>POLPETTONE DI NAPOLI</h3>
+                            <p>Recheado de mussarela, gratinado com parmesão e molho pomodoro, servido com espaguete no
+                                proprio
+                                molho.</p>
+                        </div>
+                        <h4>68</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/bifechorizo.jpg" alt="">
+                        <div class="description">
+                            <h3>BIFE DE CHORIZO</h3>
+                            <p>Contra filet, servido com risoto de gorgonzola e abobrinha</p>
+                        </div>
+                        <h4>87</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>OSSOBUCO ALLA MILANESE</h3>
+                            <p>Ossobuco com seu proprio molho servido com risoto de açafrão</p>
+                        </div>
+                        <h4>76</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>FILETTO AL PEPE</h3>
+                            <p>Filet mignion ao molhode pimenta verde, servido com spaghetti.</p>
+                        </div>
+                        <h4>82</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>POLLO ALLA FIORENTINA</h3>
+                            <p>Filet de frango recheado de mussarela e presunto crú com molho de cogumelos e purê de
+                                batatas.</p>
+                        </div>
+                        <h4>72</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>FILETTO ALLA PARMEGIANA</h3>
+                            <p>Filet à parmegiana tradicional com batatas fritas e arroz branco.</p>
+                        </div>
+                        <h4>78</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/paletadecordeiro.jpg" alt="">
+                        <div class="description">
+                            <h3>ARROSTO DI AGNELLO</h3>
+                            <p>Paleta de cordeiro assada lentamente servida com molho do assado com purê de batatas.</p>
+                        </div>
+                        <h4>83</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/filetoalmarsala.jpg" alt="">
+                        <div class="description">
+                            <h3>FILETTO AL MARSALA</h3>
+                            <p>Filet mignion com molho de vinho marsala e cebolas caramelizadas e risoto de parmesão.
+                            </p>
+                        </div>
+                        <h4>82</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>BACCALÀ AL FORNO</h3>
+                            <p>Bacalhau do forno com legumes, ovo cozido e alho laminado no azeite.</p>
+                        </div>
+                        <h4>96</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>GAMBERI CON RISOTO ZAFERANO</h3>
+                            <p>Camarões gralhados com molho de açafrão e risoto ao proprio molho com ervas verdes.</p>
+                        </div>
+                        <h4>96</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>PESCE DEL GIORNO ALLA GRIGLIA</h3>
+                            <p>Servido com julienne de legumes e purê de batatas com pesto.</p>
+                        </div>
+                        <h4>88</h4>
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>SALMONE ALLA GRIGLIA</h3>
+                            <p>Salmão grelhado e risoto de aspargos.</p>
+                        </div>
+                        <h4>95</h4>
+                    </div>
+
+            </label>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label id="bambino">
+                <h1>• BAMBINO •</h1>
+                <input type="checkbox" />
+                <div id="col3Content" class="menu-section">
+                    <img class="icon" src="./src/Imagens/bambini.png" alt="">
+
+                    <hr>
+                    <div class="bambini">
+                        <div class="prato">
+                            <img src="./src/Imagens/semimagem.jpeg" alt="">
+                            <div class="description">
+                                <h3>Escalopinho de filé com espaguete ao molho de tomate</h3>
+                                <p></p>
+                            </div>
+                            <h4>29</h4>
+                        </div>
+
+                        <div class="prato">
+                            <img src="./src/Imagens/semimagem.jpeg" alt="">
+                            <div class="description">
+                                <h3>Filé de frango com penne ao molho de tomate</h3>
+                                <p></p>
+                            </div>
+                            <h4>27</h4>
+                        </div>
+
+                        <div class="prato">
+                            <img src="./src/Imagens/semimagem.jpeg" alt="">
+                            <div class="description">
+                                <h3>Nhoque com molho bolonhesa</h3>
+                                <p></p>
+                            </div>
+                            <h4>29</h4>
+                        </div>
+
+                        <div class="prato">
+                            <img src="./src/Imagens/semimagem.jpeg" alt="">
+                            <div class="description">
+                                <h3>Nhoque com molho de tomate</h3>
+                                <p></p>
+                            </div>
+                            <h4>26</h4>
+                        </div>
+
+                        <div class="prato">
+                            <img src="./src/Imagens/semimagem.jpeg" alt="">
+                            <div class="description">
+                                <h3>Filé com arroz, feijão e batatas fritas</h3>
+                                <p></p>
+                            </div>
+                            <h4>30</h4>
+                        </div>
+
+                        <div class="prato">
+                            <img src="./src/Imagens/semimagem.jpeg" alt="">
+                            <div class="description">
+                                <h3>Escalopinho de Frango com arroz, feijão e batatas fritas</h3>
+                                <p></p>
+                            </div>
+                            <h4>27</h4>
+                        </div>
+
+                        <div class="prato">
+                            <img src="./src/Imagens/semimagem.jpeg" alt="">
+                            <div class="description">
+                                <h3>Strogonoff de frango com arroz e batatas fritas</h3>
+                                <p></p>
+                            </div>
+                            <h4>27</h4>
+                        </div>
+
+                        <div class="prato">
+                            <img src="./src/Imagens/semimagem.jpeg" alt="">
+                            <div class="description">
+                                <h3>Strogonoff de filé com arroz e batatas fritas</h3>
+                                <p></p>
+                            </div>
+                            <h4>30</h4>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </label>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label id="dolce">
+                <h1>• DOLCE •</h1>
+                <input type="checkbox" />
+                <div id="col3Content" class="menu-section">
+                    <img class="icon" src="./src/Imagens/doce.png" alt="">
+                    <hr>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>NOSTRO TIRAMISSÚ</h3>
+                            <p>Clássico itiliano a moda Regali</p>
+                        </div>
+                        <h4>27</h4>
+                    </div>
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>SORVETE AO FORNO</h3>
+                            <p>Sorvete com salada de frutas e merengue</p>
+                        </div>
+                        <h4>27</h4>
+                    </div>
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>PROFITEROLES</h3>
+                            <p>Carolinas com sorvete de baunilha, chantilly e calda de chocolate meio amargo</p>
+                        </div>
+                        <h4>26</h4>
+                    </div>
+                    <div class="prato">
+                        <img src="./src/Imagens/dolciregali.jpg" alt="">
+                        <div class="description">
+                            <h3>DOLCI REGALI</h3>
+                            <p>Carolinas recheadas com creme de avelã, sorvete de baunilha e calda de chocolate meio
+                                amargo</p>
+                        </div>
+                        <h4>26</h4>
+                    </div>
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>PETIT GATEAU COM SORVETE DE CREME</h3>
+                            <p></p>
+                        </div>
+                        <h4>26</h4>
+                    </div>
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>PUDIM DE DOCE DE LEITE E FLOR DE SAL </h3>
+                            <p></p>
+                        </div>
+                        <h4>23</h4>
+                    </div>
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>CREME DE PAPAIA COM LICOR DE CASSIS</h3>
+                            <p></p>
+                        </div>
+                        <h4>26</h4>
+                    </div>
+
+                </div>
+
+            </label>
+        </div>
+
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label id="bibite">
+                <h1>• LA BIBITE •</h1>
+                <input type="checkbox" />
+                <div id="col3Content" class="menu-section">
+                    <img class="icon" src="./src/Imagens/bebidas.png" alt="">
+                    <hr>
+                    <div class="prato">
+                        <img src="./src/Imagens/orange250.jpg" alt="">
+                        <div class="description">
+                            <h3>SUCO NATURAL</h3>
+                            <p>Jarra 250 ml</p>
+
+                        </div>
+                        <h4>10,50</h4>
+
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/orange500.jpg" alt="">
+                        <div class="description">
+                            <h3>SUCO NATURAL</h3>
+                            <p>Jarra 500 ml</p>
+
+                        </div>
+                        <h4>13,50</h4>
+
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>SODA ITALIANA</h3>
+                            <p></p>
+
+                        </div>
+                        <h4>13,50</h4>
+
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/tomatejuice.jpg" alt="">
+                        <div class="description">
+                            <h3>SUCO DE TOMATE TEMPERADO</h3>
+                            <p></p>
+
+                        </div>
+                        <h4>14,50</h4>
+
+
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/latas.jpg" alt="">
+                        <div class="description">
+                            <h3>REFRIGERANTE LATA</h3>
+                            <p></p>
+
+                        </div>
+                        <h4>8,50</h4>
+
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/semimagem.jpeg" alt="">
+                        <div class="description">
+                            <h3>AGUA C/S GÁS</h3>
+                            <p></p>
+
+                        </div>
+                        <h4>8,50</h4>
+
+                    </div>
+
+
+
+                    <h1>• CERVEJA LONG NECK •</h1>
+                    <hr>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/spaten.jpg" alt="">
+                        <div class="description">
+                            <h3>SPATEN</h3>
+                            <p></p>
+
+                        </div>
+                        <h4>13,50</h4>
+
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/stella.jpg" alt="">
+                        <div class="description">
+                            <h3>STELLA ARTOIS</h3>
+                            <p></p>
+
+                        </div>
+                        <h4>13,50</h4>
+
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/corona.jpg" alt="">
+                        <div class="description">
+                            <h3>CORONA</h3>
+                            <p></p>
+
+                        </div>
+                        <h4>14,50</h4>
+
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/colorado.jpg" alt="">
+                        <div class="description">
+                            <h3>COLORADO RIBEIRÃO</h3>
+                            <p></p>
+
+                        </div>
+                        <h4>21,50</h4>
+
+                    </div>
+
+                    <div class="prato">
+                        <img src="./src/Imagens/heineken.jpg" alt="">
+                        <div class="description">
+                            <h3>HEINEKEN</h3>
+                            <p></p>
+
+                        </div>
+                        <h4>14,50</h4>
+
+                    </div>
+
+                </div>
+
+        </div>
+
+        </label>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <label id="carta">
+                <h1>• CARTA DEI VINO •</h1>
+                <input type="checkbox" />
+                <div id="col3Content" class="menu-section">
+                    <img class="icon" src="./src/Imagens/iconVinhos.png" alt="">
+
+                    <hr>
+                    <div class="cartadeivino">
+                        <div class="goldborder">
+
+
+
+                            <h2>ESPUMANTES</h2>
+
+
+
+                            <h4> - BRASIL - </h4>
+
+                            <p> VALDEMIZ BRUT ... R$89,00</p>
+                            <p><i> Prosecco/ Monte Reale/ Flores da Cunha</i></p>
+                            <br>
+
+                            <p>VALDEMIZ BRUT ROSÉ ... R$89,00</p>
+                            <p><i> Pinot Noir/Monte Reale/ Flores da Cunha</i></p>
+
+                            <h4> - ITÁLIA -</h4>
+
+                            <p>DAMA BRUT ... <R1144></R1144>,00</p>
+                            <p><i> Trebriano Chardonnay/ Caldirola / Piemonte</i></p>
+
+                            <h4> - ESPANHA - </h4>
+                            <br>
+
+                            <p>CAVA CASTELFINO BRUT ... R$ 110,00</p>
+                            <p><i> Macabeo, Parellada e Xarel-lo / Jaume Serra / Cataluña</i></p>
+                            <br>
+                            <h2>VINHOS BRANCOS</h2>
+
+                            <H4>- ITÁLIA -</H4>
+
+                            <P>BERTELETTI ... R$ 99,00</P>
+
+                            <p><i> Trebriano / Feudivinni / Puglia</i></p>
+
+                            <h4>- ARGENTINA -</h4>
+
+                            <p>ARTE DE ARGENTO ... R$ 98,00</p>
+                            <p><i> Pinot grigio/ Bodegas Argento / Mendoza</i></p>
+                            <br>
+
+                            <p>LA CONSULTA ... R$ 116,00</p>
+                            <p><i> Chardonnay/ Finca la Celia / Mendoza</i></p>
+
+                            <H4>- CHILE -</H4>
+
+                            <P>QUEREU ... R$99,00</P>
+                            <p><i> Sauvignion Blanc/ Fox Wines / Vale Central</i></p>
+                            <br>
+                            <p>ALTO MADERO RESERVA ... R$ 118,00</p>
+                            <p><i> Chardonnay/ Errazuriz Ovalle / Vale Central</i></p>
+
+
+                            <H4>- PORTUGAL -</H4>
+
+                            <P>VINHO VERDE PONTE DA BARCA ... R$ 108,00</P>
+                            <p><i> Loureiro, Trajadura e arinto/ Ponte da Barca/ Minho</i></p>
+
+                            <br>
+                            <p>PEDRA CANCELA SELEÇÃO DO ENOLOGO ... R$ 176,00</p>
+                            <p><i> Encuzado, Cerceal e Malvasia Fina/ Lusovini / Dão</i></p>
+
+
+                            <H2>VINHOS ROSÉS</H2>
+
+                            <H4>- CHILE -</H4>
+                            <P>QUEREU ... R$99,00</P>
+                            <p><i> Cabernet Sauvignon e Syrah/ Fox Wines / Vale Central</i></p>
+
+
+                            <H4>- ITÁLIA -</H4>
+
+                            <P>CÓDICI ROSATO ... R$ 118,00</P>
+
+                            <p><i> Negroamaro/ Codici Massaerse / Puglia</i></p>
+
+                            <H2>VINHOS TINTOS</H2>
+
+                            <H4>- ITÁLIA -</H4>
+
+                            <P>BERTELETTI SANGIOVESE ... R$ 92,00</P>
+
+                            <p><i> Sangiovese/ Feudivinni / Puglia</i></p>
+
+                            <br>
+                            <P>BARBERA D'ASTI CASTELIA VITIS ... R$ 110,00</P>
+                            <p><i> Barbera/ Fratelli Berteletti / Piemonte</i></p>
+
+                            <br>
+                            <p>CODICI ROSSO ... R$ 119,00</p>
+                            <p><i> Negroamaro/ Mondo del Vino/ Puglia</i></p>
+
+                            <br>
+
+                            <p>PRIMITIVO BERTELETTI ... R$ 139,00</p>
+                            <p><i> Primitivo / Feudivini / Puglia</i></p>
+
+                            <br>
+
+                            <p>CHIANTI CAMPORSINO ... R$ 182,00</p>
+                            <p><i> Sangiovese / Principe Corsini / Toscana</i></p>
+                            <br>
+
+                            <p>MEZZACORONA DINOTTE ... R$ 199,00</p>
+                            <p><i> Teroldego e Merlot / Vinicola Mezzacorona / Trenting-alto Adige </i></p>
+                            <br>
+
+                            <p>SOPRA SASSO AMARONE DELLA VALPOLICELLA DOCO ... R$ 720,00</p>
+                            <p><i>Corvina Vergnese / Mom civage / Vêneto </i></p>
+
+
+                            <H4>- ARGENTINA -</H4>
+
+                            <p>ARTE DE ARGENTO ... R$ 96,00</p>
+                            <p><i> Malbec / Finca la Celia / Mendonza </i></p>
+                            <br>
+
+                            <p>MALEVO ... R$ 108,00</p>
+                            Malbec e Syrah / Amadeo MArañon / Mendonza
+                            <br>
+                            <p>LA CONSULTA RESERVA ... R$ 159,00</p>
+                            <p><i> Malbec / Finca la Celia / Mendonza </i></p>
+                            <br>
+                            <p>FABRE MONTMAYOU RESERVA ... R$ 240,00</p>
+                            <p><i> Malbec / Bodegas Fabre / Mendonza </i></p>
+
+                            <H4>- CHILE -</H4>
+
+                            <p>DONA FLORENCIA ... R$ 89,00</p>
+                            <p><i> Cabernet Sauvignion / El Pedregal / Vale Central </i></p>
+                            <br>
+
+                            <p>QUEREU ... R$ 99,00</p>
+                            <p><i> Carménère / Fox Wines / Vale Central </i></p>
+                            <br>
+
+                            <p>ALTO MADERO RESERVA ... R$ 118,00</p>
+                            <p><i> Cabernet Sauvignion / Errazuriz Evalle / Vale Central </i></p>
+                            <br>
+
+                            <p>EL PAYADOR (ORGÂNICO) ... R$ 158,00</p>
+                            <p><i> Pinot Noir /Veramonte / CasaBlanca </i></p>
+                            <br>
+
+                            <p>POLKURA ... R$ 280,00</p>
+                            <p><i> Syrah / Agricola la Viña / Vale de Colchagua </i></p>
+
+                            <H4>- PORTUGAL -</H4>
+                            <p>MEIA PALAVRA ... R$ 89,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+                            <br>
+                            <p>ENCOSTAS DE PENALVA ... R$ 96,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+                            <br>
+                            <p>BACALHOA MONTE DAS ÂNFORAS ... R$ 149,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+                            <br>
+                            <p>DUAS QUINTAS ADRIANO RAMOS PINTO ... R$ 269,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+
+                            <H4>- ESPANHA -</H4>
+
+                            <p>CINCO VIÑAS ... R$ 99,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+                            <br>
+
+                            <p>SAN VALENTIN ... R$ 139,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+
+                            <H4>FRANÇA</H4>
+                            <p>TED THE MULE CUVÉE RÉSERVE ... R$ 136,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+                            <br>
+
+                            <p>CHATEAU BAUVALLON ... R$ 208,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+                            <br>
+
+                            <p>CHATEU VIAUD LALANDE ... R$ 459,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+
+
+                            <H2>VINHOS BRANCOS MEIA GARRAFA (375 ML)</H2>
+                            <H4>- CHILE -</H4>
+                            <p>QUEREU ... R$ 64,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+                            <br>
+                            <p>ALTO MADERO RESERVA ... R$ 69,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+
+                            <br>
+                            <H2>VINHOS TINTOS MEIA GARRAFA (375 ML)</H2>
+
+                            <H4>- CHILE -</H4>
+                            <p>QUEREU ... R$ 64,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+                            <br>
+                            <p>ALTO MADERO RESERVA ... R$ 69,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+                            <br>
+                            <p>ALTO MADERO RESERVA ... R$ 69,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+                            <br>
+                            <H2>VINHOS BRANCO QUARTO DE GARRAFA (187 ML)</H2>
+
+                            <H4>- CHILE -</H4>
+                            <p>VENTISQUERO CLASSIC ... R$ 38,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+                            <br>
+                            <H2>VINHOS BRANCO QUARTO DE GARRAFA (187 ML)</H2>
+
+                            <H4>- CHILE -</H4>
+                            <p>CORDILHEIRA ANDINA ... R$ 38,00</p>
+                            <p>PROSECCO/MONTE REALE/ FLORES DA CUNHA</p>
+
+                            <br><br>
+                            <p>SE BEBER NÃO DIRIJA!</p>
+
+
+
+                        </div>
+
+                    </div>
+
+            </label>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+            <input type="checkbox" id="toggleBarSection">
+            <label id="nostro" for="toggleBarSection">
+                <h1>• IL NOSTRO BAR •</h1>
+            </label>
+            <div id="col3Content" class="menu-section">
+                <img class="icon" src="./src/Imagens/drink.png" alt="">
+
+                <hr>
+                <div class="cartadeivino">
+                    <div class="goldborder">
+                        <h2>
+                            APERITIVE
+
+                        </h2>
+
+                        <p>NEGRONI ... R$34,00</p>
+                        <P><Small>campari, gin e vermouth Russo</Small></P>
+                        <br>
+                        <p>NEGRONI SBAGLIATO ... R$36,00</p>
+                        <P><Small>campari, gin e vermouth Russo</Small></P>
+                        <br>
+
+                        <p>BOULEVARDIER ... <R138></R138>,00</p>
+                        <P><Small>campari, gin e vermouth Russo</Small></P>
+                        <br>
+
+                        <p>APEROL SPRITZ ... R$34,00</p>
+                        <P><Small>campari, gin e vermouth Russo</Small></P>
+                        <br>
+
+                        <p>APEROL MIMOSA ... R$34,00</p>
+                        <P><Small>campari, gin e vermouth Russo</Small></P>
+                        <br>
+
+                        <p>BELLINI ... R$34,00</p>
+                        <P><Small>campari, gin e vermouth Russo</Small></P>
+                        <br>
+
+                        <p>ROSSINI ... R$34,00</p>
+                        <P><Small>campari, gin e vermouth Russo</Small></P>
+                        <br>
+
+                        <p>FRAGOLE LAMBRUSCO ... R$36,00</p>
+                        <P><Small>campari, gin e vermouth Russo</Small></P>
+                        <br>
+
+                        <p>MARGARITA ... R$32,00</p>
+                        <P><Small>campari, gin e vermouth Russo</Small></P>
+                        <br>
+
+                        <p>SANGRIA - CLERICOT JARRA (1 LITRO) ... R$96,00</p>
+                        <P><Small>campari, gin e vermouth Russo</Small></P>
+                        <br>
+
+
+                        <P> A TRADICIONAL GIN E TÔNICA GANHA UMA VERSÃO SABORIZADA COM SUA FRUTA FAVORITA. ESCOLHA
+                            SUA
+                            OPÇÃO:</P>
+                        <P>CRANBERRY / MAÇÃ VERDE / LIMÃO SICILIANO / MARACUJÁ</P>
+                        <br>
+                        <P>GIN TONICA SABORIZADA NACIONAL ... R$ 29,00</P>
+                        <br>
+                        <P>GIN TONICA SABORIZADA IMPORTADA ... R$ 38,00</P>
+                        <br>
+                        <p>WINE GIN NACIONAL ... R$ 29,00</p>
+                        <P><Small>gin, tônica e vinho tinto</Small></P>
+                        <br>
+
+                        <p>WINE GIN IMPORTADA ... R$ 38,00</p>
+                        <P><Small>gin, tônica e vinho tinto</Small></P>
+                        <br>
+
+                        <p>PISCINE SPRITZ ... R$ 34,00</p>
+                        <P><Small>levemente frutado com drapefruit e espumante brut</Small></P>
+                        <br>
+
+                        <p>CAIPIRINHA ... RS 27,00</p>
+                        <br>
+
+                        <p>CAIPIRINHA ESPECIAL ... RS 32,00</p>
+                        <br>
+
+                        <p>CAIPIROSCA NACIONAL ... RS 29,00</p>
+                        <br>
+
+                        <p>CAIPIROSCA IMPORTADA ... RS 35,00</p>
+                        <br>
+
+                        <p>CAIPIFRUTAS NACIONAL ... RS 31,00</p>
+                        <br>
+                        <p>CAIPIFRUTAS IMPORTADA ... RS 37,00</p>
+                        <br>
+
+                        <H2>DESTILLATI</H2>
+
+                        <P>WHISKY 8 ANOS ... R$ 24,00</P>
+                        <br>
+
+                        <P>WHISKY 12 ANOS ... R$ 30,00</P>
+                        <br>
+
+                        <P>JACK DANIELS ... R$ 28,00</P>
+                        <br>
+
+                        <P>VODKA SMIRNOFF ... R$ 20,00</P>
+                        <br>
+
+                        <P>VODKA ABSOLUT ... R$ 26,00</P>
+                        <br>
+
+                        <P>CAMPARI ... R$ 20,00</P>
+                        <br>
+
+                        <P>GIN GORDON'S ... R$ 22,00</P>
+                        <br>
+
+                        <P>GIN TANQUERAY ... R$ 30,00</P>
+                        <br>
+
+                        <P>CACHAÇA ESPECIAL ... R$ 19,00</P>
+                        <br>
+
+                        <P>TEQUILA ... R$ 22,00</P>
+                        <br>
+
+                        <H2>DIGESTIVI</H2>
+
+                        <P>LIMONCELLO ... R$ 18,00</P>
+                        <p><small>licor de limão siciliano feito por nós, super refrescante</small></p>
+                        <br>
+
+                        <P>LICOR FRANGELICO ... R$ 26,00</P>
+                        <br>
+
+                        <P>LICOR 43 ... R$ 26,00</P>
+                        <br>
+
+                        <P>LICOR COINTREAU ... R$ 22,00</P>
+                        <br>
+
+                        <P>VINHO DO PORTO ... R$ 26,00</P>
+
+                        <br><br>
+                        <p>SE BEBER NÃO DIRIJA!</p>
+                    </div>
+                </div>
+            </div>
+
+            </label>
+        </div>
+
+
+        <script>var menu = document.getElementById('menu'); // Adicione esta linha no início do seu script
+
+            function clickMenu() {
+                if (menu.style.display == 'block') {
+                    menu.style.display = 'none';
+                } else {
+                    menu.style.display = 'block';
+                }
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                var sections = document.querySelectorAll('.menu-section');
+                var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+                checkboxes.forEach(function (checkbox, index) {
+                    checkbox.addEventListener('change', function () {
+                        sections[index].style.maxHeight = checkbox.checked ? sections[index].scrollHeight + 'px' : 0;
+                    });
+                });
+            });
+
+            $(document).ready(function () {
+                $('.botoes-navegacao').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    prevArrow: '<button class="slick-prev" aria-label="Previous" type="button">Previous</button>',
+                    nextArrow: '<button class="slick-next" aria-label="Next" type="button">Next</button>',
+                    responsive: [
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 1
+                            }
+                        }
+                    ]
+                });
+            });
+
+            window.onscroll = function () {
+                stickyNavbar();
+            };
+
+            var navbar = document.querySelector('.botoes-navegacao');
+            var sticky = navbar.offsetTop;
+
+            function stickyNavbar() {
+                if (window.pageYOffset >= sticky) {
+                    navbar.classList.add('sticky');
+                } else {
+                    navbar.classList.remove('sticky');
+                }
+            }
+
+        </script>
+
+</body>
+
+</html>

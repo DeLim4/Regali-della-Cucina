@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery | Regali</title>
+
+    <link rel="icon" href="./src/Imagens/LogoMarrom.jpg (1).png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Fraunces:ital,wght@1,400;1,500;1,600&family=Hanken+Grotesk:ital,wght@0,100;0,200;1,100&family=Josefin+Sans:ital,wght@0,100;1,100;1,300&family=Lato:wght@300;400;700&family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;1,100&family=Open+Sans:wght@300;400;500;700&family=Poppins:wght@100;300;500&family=Russo+One&family=Water+Brush&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: bebas neue;
+            src: url(./src/Fonts/BebasNeue-Regular.ttf);
+        }
+
+        body {
+            background-image: url(./src/Imagens/background-menu.jpg);
+            background-position: center;
+
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            margin: 10px auto;
+            width: 80%;
+            justify-content: space-between;
+            height: 130px;
+
+        }
+
+        .header {
+    overflow: hidden;
+    margin: auto;
+    width: 90%;
+    padding: 15px;
+    font-size: 25px;
+}
+#burguer{display: none;
+}
+.menu {
+    display: flex;
+    list-style: none;
+    margin: 0 auto;
+    padding: 30px;
+    flex-wrap: wrap;
+}
+
+li {
+    display: inline-block;
+    margin: 15px auto;
+}
+
+
+nav li a:hover {
+
+    color: #daa520;
+}
+
+.logo {
+
+    margin-top: 150px;
+    text-align: center;
+}
+
+#regalipng {
+    width: 50%;
+}
+
+nav a {
+    display: block;
+    position: relative;
+    color: #000000;
+    font-size: 15px;
+    padding: 8px 10px;
+    margin: 0 5px;
+    text-decoration: none;
+}
+
+a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background-color: #daa520;
+    transition: width .5s;
+}
+
+a:hover:before {
+    width: 100%;
+}
+        img {
+            width: 140px;
+
+        }
+        .entregador {
+            width: 80%;
+            margin-left: 10%;
+            background-image: url(./src/Imagens/entregador.jpg);
+            height: 300px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: sticky;
+            top: 0;
+            color: white;
+            border-radius: 0px 15px 75px 0px;
+        }
+
+        h1 {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            top: 140px;
+            margin-left: 25px;
+            border: 1px solid white;
+            width: 250px;
+            padding: 15px;
+            opacity: 0.8;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .cards {
+            display: flex;
+            max-width: 80%;
+
+            margin: 50px auto;
+        }
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            margin: 10px auto; 
+            width: 80%;
+            box-shadow: -5px 5px 22px #a7a7a7,
+                5px -5px 22px #ffffff;
+            height: 350px;
+
+        }
+
+
+        button {
+            text-decoration: none;
+            position: relative;
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            border: none;
+        }
+
+        button:after {
+
+            content: " ";
+            width: 0%;
+            height: 100%;
+            background: #ff0101;
+            position: absolute;
+            transition: all 0.4s ease-in-out;
+            right: 0;
+        }
+
+        button:hover::after {
+
+            right: auto;
+            left: 0;
+            width: 100%;
+        }
+
+        button span {
+            text-align: center;
+            text-decoration: none;
+
+            padding: 18px 15px;
+            color: #f50000;
+            font-size: 1.125em;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            z-index: 20;
+            transition: all 0.3s ease-in-out;
+        }
+
+        button:hover span {
+            cursor: pointer;
+            color: #ffffff;
+            animation: scaleUp 0.3s ease-in-out;
+        }
+
+        @keyframes scaleUp {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(0.95);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #moto {
+            position: relative;
+            width: 55px;
+            text-align: center;
+            top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #logoregali {
+            width: 100px;
+            margin: 15px auto;
+            margin-bottom: 25px;
+        }
+
+
+        #logoregalo {
+            width: 120px;
+            margin: 15px auto;
+            margin-bottom: 25px;
+        }
+
+        p {font-family: bebas neue;
+            font-size: 25px;
+            margin: 0 auto;
+
+        }
+        @media screen and (max-width:670px) {
+
+.container {
+
+    width: 95%;
+    justify-content: space-between;
+    height: 100px;
+
+}
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: aliceblue;
+    width: 100%;
+
+}
+
+a {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin: 10px;
+
+}
+
+#burguer {
+    display: flex;
+
+    cursor: pointer;
+}
+
+
+
+nav {
+    width: 10%;
+    height: 100vh;
+    display: none;
+}
+
+img {
+    width: 100px;
+
+}
+
+.setas {
+    width: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin-top: 35px}
+}
+
+        /* teste */
+    </style>
+</head>
+
+
+<body>
+    <div class="header">
+        <span class="material-symbols-outlined" id="burguer" onclick="clickMenu()">
+            Menu
+            </span>
+        <nav id="menu">
+           
+            <ul class="menu">
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./historia.html">Historia</a></li>
+                <li><a href="./unidade.html">Unidade</a></li>
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./delivery.html">Delivery</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+                
+            </ul>
+
+        
+        </nav>
+
+        
+    
+
+    </div>
+
+    <div class="entregador">
+        <h1>PEÇA ATRAVEZ DO IFOOD </h1>
+    </div>
+
+
+    <div class="cards">
+        <div class="card">
+            <img id="logoregali" src="./src/Imagens/LogoMarrom.jpg (1).png" alt="">
+            <p>Regalli</p>
+            <P><small> <em> RESTAURANTE ITALIANO</em></small></P>
+            <a
+                href="https://www.ifood.com.br/delivery/brasilia-df/regali-della-cucina-setor-noroeste/29477048-fe7c-4d71-8b31-eabd87fa3794"><button>
+                    <span>PEÇA JÁ!<img id="moto" src="./src/Imagens/icondelivery.png" alt=""> </span></button>
+            </a>
+        </div>
+
+
+       
+    </div>
+<script>function clickMenu(){
+    if (menu.style.display =='block'){menu.style.display='none'}
+    else{menu.style.display='block'}
+}
+</script>
+</body>
+
+</html>
