@@ -380,133 +380,118 @@
             </form>
         </div>
     </div>
-    <script>
-        // Máscara para telefone
-        const telefoneInput = document.getElementById('telefone');
-        telefoneInput.addEventListener('input', function () {
-            let valor = telefoneInput.value.replace(/\D/g, '');
-            if (valor.length > 11) valor = valor.slice(0, 11);
+  <script>
+  // Máscara para telefone
+  const telefoneInput = document.getElementById('telefone');
+  telefoneInput.addEventListener('input', function () {
+    let valor = telefoneInput.value.replace(/\D/g, '');
+    if (valor.length > 11) valor = valor.slice(0, 11);
 
-            if (valor.length >= 2 && valor.length <= 6)
-                valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
-            else if (valor.length > 6 && valor.length <= 10)
-                valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 6)}-${valor.slice(6)}`;
-            else if (valor.length === 11)
-                valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
+    if (valor.length >= 2 && valor.length <= 6)
+      valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
+    else if (valor.length > 6 && valor.length <= 10)
+      valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 6)}-${valor.slice(6)}`;
+    else if (valor.length === 11)
+      valor = `(${valor.slice(0, 2)}) ${valor.slice(2, 7)}-${valor.slice(7)}`;
 
-            telefoneInput.value = valor;
-        });
+    telefoneInput.value = valor;
+  });
 
-        // Elementos do formulário
-        const dataInput = document.getElementById('data');
-        const horarioSelect = document.getElementById('horario');
+  // Horários por dia
+  const dataInput = document.getElementById('data');
+  const horarioSelect = document.getElementById('horario');
 
-        // Função para gerar horários em intervalos de X minutos
-        function gerarHorarios(inicio, fim, intervaloMinutos) {
-            const horarios = [];
-            const [hInicio, mInicio] = inicio.split(':').map(Number);
-            const [hFim, mFim] = fim.split(':').map(Number);
+  const horarios = {
+    almoco: gerarHorarios("11:45", "15:00", 15),
+    jantar: gerarHorarios("18:00", "22:00", 15),
+    jantarSexta: gerarHorarios("18:00", "23:00", 15),
+    sabadoTarde: gerarHorarios("15:15", "17:45", 15),
+    domingo: gerarHorarios("11:45", "17:00", 15)
+  };
 
-            let atual = new Date(0, 0, 0, hInicio, mInicio);
-            const limite = new Date(0, 0, 0, hFim, mFim);
+  dataInput.addEventListener('change', () => {
+    const dataSelecionada = new Date(dataInput.value + 'T00:00:00');
+    const diaSemana = dataSelecionada.getDay();
 
-            while (atual <= limite) {
-                const horas = atual.getHours().toString().padStart(2, '0');
-                const minutos = atual.getMinutes().toString().padStart(2, '0');
-                horarios.push(`${horas}:${minutos}`);
-                atual.setMinutes(atual.getMinutes() + intervaloMinutos);
-            }
+    let opcoes = [];
 
-            return horarios;
+    if (diaSemana === 0) {
+      opcoes = horarios.domingo;
+    } else if (diaSemana >= 1 && diaSemana <= 4) {
+      opcoes = [...horarios.almoco, ...horarios.jantar];
+    } else if (diaSemana === 5) {
+      opcoes = [...horarios.almoco, ...horarios.jantarSexta];
+    } else if (diaSemana === 6) {
+      opcoes = [...horarios.almoco, ...horarios.sabadoTarde, ...horarios.jantar];
+    }
+
+    preencherHorarios(opcoes);
+  });
+
+  function preencherHorarios(lista) {
+    horarioSelect.innerHTML = '<option value="">Selecione um horário</option>';
+    lista.forEach(h => {
+      const opt = document.createElement('option');
+      opt.value = h;
+      opt.textContent = h;
+      horarioSelect.appendChild(opt);
+    });
+  }
+
+  function gerarHorarios(inicio, fim, intervaloMinutos) {
+    const horarios = [];
+    const [hInicio, mInicio] = inicio.split(':').map(Number);
+    const [hFim, mFim] = fim.split(':').map(Number);
+
+    let atual = new Date(0, 0, 0, hInicio, mInicio);
+    const limite = new Date(0, 0, 0, hFim, mFim);
+
+    while (atual <= limite) {
+      const horas = atual.getHours().toString().padStart(2, '0');
+      const minutos = atual.getMinutes().toString().padStart(2, '0');
+      horarios.push(`${horas}:${minutos}`);
+      atual.setMinutes(atual.getMinutes() + intervaloMinutos);
+    }
+
+    return horarios;
+  }
+
+  // Envio para Google Sheets via Google Apps Script Web App
+  const form = document.getElementById('reservaForm');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const dados = {
+      pessoas: form.pessoas.value,
+      data: form.data.value,
+      horario: form.horario.value,
+      telefone: form.telefone.value
+    };
+
+    try {
+      const resposta = await fetch("https://script.google.com/macros/s/AKfycbxe8QJwHIIScxzG8HBdzyi3XHWcbYV-EY3-dAl3ccvmA-o69FZSWxMMiHU9n49ffRiEdg/exec", {
+        method: "POST",
+        body: JSON.stringify(dados),
+        headers: {
+          "Content-Type": "application/json"
         }
+      });
 
-        // Horários pré-definidos por turno
-        const horarios = {
-            almoco: gerarHorarios("11:45", "15:00", 15),
-            jantar: gerarHorarios("18:00", "22:00", 15),
-            jantarSexta: gerarHorarios("18:00", "23:00", 15),
-            sabadoTarde: gerarHorarios("15:15", "17:45", 15),
-            domingo: gerarHorarios("11:45", "17:00", 15)
-        };
+      if (resposta.ok) {
+        alert("Reserva registrada com sucesso!");
+        form.reset();
+        horarioSelect.innerHTML = '<option value="">Selecione um horário</option>';
+      } else {
+        alert("Erro ao registrar reserva.");
+      }
+    } catch (erro) {
+      console.error("Erro na requisição:", erro);
+      alert("Erro de conexão com o servidor.");
+    }
+  });
+</script>
 
-        // Atualiza os horários disponíveis conforme o dia escolhido
-        dataInput.addEventListener('change', () => {
-            const dataSelecionada = new Date(dataInput.value + 'T00:00:00');
-            const diaSemana = dataSelecionada.getDay(); // 0=domingo, ..., 6=sábado
-
-            let opcoes = [];
-
-            if (diaSemana === 0) { // Domingo
-                opcoes = horarios.domingo;
-            } else if (diaSemana >= 1 && diaSemana <= 4) { // Segunda a quinta
-                opcoes = [...horarios.almoco, ...horarios.jantar];
-            } else if (diaSemana === 5) { // Sexta
-                opcoes = [...horarios.almoco, ...horarios.jantarSexta];
-            } else if (diaSemana === 6) { // Sábado
-                opcoes = [...horarios.almoco, ...horarios.sabadoTarde]; // sem jantar
-            }
-
-            preencherHorarios(opcoes);
-        });
-
-        // Popula o select de horários
-        function preencherHorarios(lista) {
-            horarioSelect.innerHTML = '<option value="">Selecione um horário</option>';
-            lista.forEach(h => {
-                const opt = document.createElement('option');
-                opt.value = h;
-                opt.textContent = h;
-                horarioSelect.appendChild(opt);
-            });
-        }
-
-        // Envio para Google Planilhas via Apps Script Web App
-        const form = document.getElementById('reservaForm');
-
-        form.addEventListener('submit', async function (e) {
-            e.preventDefault();
-
-            const dados = {
-                pessoas: form.pessoas.value,
-                data: form.data.value,
-                horario: form.horario.value,
-                telefone: form.telefone.value
-            };
-
-            try {
-                const resposta = await fetch(
-                    "https://script.google.com/macros/s/AKfycbx-tLzXdvo2-FihoVRmrYYlattU2mPVHLk63aX0h7B0N0sfBNUoWzWM7VPt9O7fAjijpQ/exec", {
-                        method: "POST",
-                        body: JSON.stringify(dados),
-                        headers: {
-                            "Content-Type": "application/json"
-                        }
-                    });
-
-                if (resposta.ok) {
-                    alert("Reserva registrada com sucesso!");
-                    form.reset();
-                    horarioSelect.innerHTML = '<option value="">Selecione um horário</option>';
-                } else {
-                    alert("Erro ao registrar reserva.");
-                }
-            } catch (erro) {
-                console.error("Erro na requisição:", erro);
-                alert("Erro de conexão com o servidor.");
-            }
-        });
-
-        // Função para toggle do menu
-        const menu = document.getElementById('menu');
-
-        function clickMenu() {
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
-        }
-    </script>
 </body>
 
 </html>
