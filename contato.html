@@ -380,7 +380,7 @@
             </form>
         </div>
     </div>
-  <script>
+ <script>
   // Máscara para telefone
   const telefoneInput = document.getElementById('telefone');
   telefoneInput.addEventListener('input', function () {
@@ -456,7 +456,7 @@
     return horarios;
   }
 
-  // Envio para Google Sheets via Google Apps Script Web App
+  // Envio para Google Sheets usando GET (sem CORS)
   const form = document.getElementById('reservaForm');
 
   form.addEventListener('submit', async function (e) {
@@ -469,16 +469,16 @@
       telefone: form.telefone.value
     };
 
-    try {
-      const resposta = await fetch("https://script.google.com/macros/s/AKfycbxe8QJwHIIScxzG8HBdzyi3XHWcbYV-EY3-dAl3ccvmA-o69FZSWxMMiHU9n49ffRiEdg/exec", {
-        method: "POST",
-        body: JSON.stringify(dados),
-        headers: {
-          "Content-Type": "application/json"
-        }
-      });
+    // Substitua abaixo pela SUA URL do script publicado
+    const endpoint = "https://script.google.com/macros/s/AKfycbxe8QJwHIIScxzG8HBdzyi3XHWcbYV-EY3-dAl3ccvmA-o69FZSWxMMiHU9n49ffRiEdg/exec";
 
-      if (resposta.ok) {
+    const url = `${endpoint}?pessoas=${encodeURIComponent(dados.pessoas)}&data=${encodeURIComponent(dados.data)}&horario=${encodeURIComponent(dados.horario)}&telefone=${encodeURIComponent(dados.telefone)}`;
+
+    try {
+      const resposta = await fetch(url);
+      const resultado = await resposta.json();
+
+      if (resultado.status === "sucesso") {
         alert("Reserva registrada com sucesso!");
         form.reset();
         horarioSelect.innerHTML = '<option value="">Selecione um horário</option>';
@@ -491,6 +491,7 @@
     }
   });
 </script>
+
 
 </body>
 
