@@ -1,16 +1,10 @@
-const express = require('express');
-const cors = require('cors');
-const axios = require('axios');
+import axios from 'axios';
 
-const app = express();
-const PORT = 3000;
+export default async function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ status: 'erro', mensagem: 'Método não permitido' });
+  }
 
-// Middleware
-app.use(cors());
-app.use(express.json());
-
-// Rota para receber os dados e enviar ao Google Apps Script
-app.post('/reserva', async (req, res) => {
   const { pessoas, data, horario, telefone } = req.body;
 
   const scriptURL = 'https://script.google.com/macros/s/AKfycbxe8QJwHIIScxzG8HBdzyi3XHWcbYV-EY3-dAl3ccvmA-o69FZSWxMMiHU9n49ffRiEdg/exec';
@@ -28,8 +22,4 @@ app.post('/reserva', async (req, res) => {
     console.error("Erro ao enviar para Apps Script:", erro.message);
     res.status(500).json({ status: "erro", erro: erro.message });
   }
-});
-
-app.listen(PORT, () => {
-  console.log(`Servidor rodando em http://localhost:${PORT}`);
-});
+}
